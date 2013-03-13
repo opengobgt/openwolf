@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 # -*- coding: utf-8 -*-
 class Notificaciones < ActionMailer::Base
 
@@ -6,7 +8,7 @@ class Notificaciones < ActionMailer::Base
   if Rails.env.development?
     default_url_options[:host] = "localhost:3000"
   else
-    default_url_options[:host] = "transparencia.gob.gt"
+    default_url_options[:host] = "openwolf.transparencia.gob.gt"
   end
 
   # envia correo cuando se genera una nueva solicitud
@@ -105,7 +107,7 @@ class Notificaciones < ActionMailer::Base
 
     if @solicitudes.count > 0
     nombre_institucion = institucion.nombre
-    
+
     #correo institucional
     email = institucion.email
     correo_institucional = ( email.nil? ? '' : ', ' + email)
