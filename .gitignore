@@ -41,3 +41,4 @@ solr/*
 lib/generators/haml
 lib/generators/haml/*
 .rvmrc
+*.sublime*
