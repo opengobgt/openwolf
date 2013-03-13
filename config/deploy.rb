@@ -166,7 +166,7 @@ namespace :openwolf do
       backup_file = "#{backup_dir}/#{filename}"
 
       puts "Uploading file: #{file_path} to #{backup_file}"
-      system("scp -C #{file_path} transparencia@transparencia.gob.gt://#{backup_file}")
+      system("scp -C #{file_path} transparencia@openwolf.transparencia.gob.gt://#{backup_file}")
 
       puts "Extracting file #{backup_file}"
       run "bunzip2 #{backup_file}"
