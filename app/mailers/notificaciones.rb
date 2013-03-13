@@ -21,7 +21,7 @@ class Notificaciones < ActionMailer::Base
     email_ciudadano = solicitud.email
     correo_institucional = solicitud.institucion.email
     correos_interesados = solicitud.correos_interesados(false).join(", ")
-    subject = "openwolf - ConfirmaciÃ³n nueva solicitud de informaciÃ³n - #{solicitud.codigo}."
+    subject = "openwolf - Confirmaci¨®n nueva solicitud de informaci¨®n - #{solicitud.codigo}."
 
 
     if a_ciudadano == true
@@ -55,7 +55,7 @@ class Notificaciones < ActionMailer::Base
     mail(:to => actividad.usuario.email,
          :bcc => correo_institucional,
          :reply_to => correo_institucional,
-         :subject => "openwolf - Nueva AsignaciÃ³n - Solicitud #{actividad.solicitud.codigo}")
+         :subject => "openwolf - Nueva Asignaci¨®n - Solicitud #{actividad.solicitud.codigo}")
   end
 
 
@@ -122,7 +122,7 @@ class Notificaciones < ActionMailer::Base
 
     mail(:to => destinatarios,
          :cc => correo_institucional,
-         :bcc => 'deleongironale@gmail.com',
+         :bcc => 'marvin.mlima@gmail.com',
          :reply_to => correo_institucional,
          :subject => "[openwolf] Reporte de Solicitudes por vencer - #{nombre_institucion} - #{Time.now}.")
    end
