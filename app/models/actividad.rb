@@ -26,8 +26,8 @@ class Actividad < ActiveRecord::Base
 
   has_many :seguimientos, :dependent => :destroy
 
-  scope :nocompletadas, :conditions=>["fecha_resolucion IS NULL" ]
-  scope :completadas, :conditions=>["fecha_resolucion IS NOT NULL" ]
+  scope :nocompletadas, :conditions=>["actividades.fecha_resolucion IS NULL" ]
+  scope :completadas, :conditions=>["actividades.fecha_resolucion IS NOT NULL" ]
 
   def marcar_como_terminada(fecha = Date.today)
     #marcamos actividad como terminada

@@ -34,7 +34,7 @@ class SolicitudesController < ApplicationController
       @anuladas = nil
     end
     
-    @asignaciones = usuario_actual.actividades.nocompletadas
+    @asignaciones = usuario_actual.actividades.nocompletadas.joins(:solicitud).where("solicitudes.anulada = ?", false)
     
     respond_to do |format|
       format.html # index.html.erb

@@ -57,6 +57,8 @@ gem 'airbrake' #notificacion de errores via http://hoptoadapp.com/
 
 gem 'rmagick'
 
+gem 'progress_bar'
+
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
@@ -74,6 +76,9 @@ group :development, :test do
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 
   gem 'foreman'
+  gem 'rvm-capistrano'
+
+  gem 'thin'
 end
 
 # TESTING
