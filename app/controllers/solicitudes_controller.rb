@@ -7,7 +7,7 @@ class SolicitudesController < ApplicationController
   # GET /solicitudes
   # GET /solicitudes.xml
   def index
-    @solicitudes = Solicitud.all
+#    @solicitudes = Solicitud.all
 
     @usuario_es_udip = nivel_seguridad(usuario_actual,'personaludip')
 
