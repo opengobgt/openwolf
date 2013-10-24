@@ -70,7 +70,7 @@ group :development, :test do
   gem 'silent-postgres' #elimina la salida de el log de postgresql
   gem 'faker' # herramienta para generacion de datos de prueba
 
-  gem 'ruby-prof'
+ # gem 'ruby-prof'
 
 
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
@@ -84,7 +84,7 @@ end
 # TESTING
 
 group  :test do
-  gem 'simplecov', '>=0.3.8', :require => false
+#  gem 'simplecov', '>=0.3.8', :require => false
 
 
   gem "rspec-rails",        :git => "git://github.com/rspec/rspec-rails.git"
