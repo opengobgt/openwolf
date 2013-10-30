@@ -159,7 +159,7 @@ class Feriado < ActiveRecord::Base
     return dias_no_laborales
   end #self.calcular_dias_no_laborales
   
-  private
+  #private
 
   def cleanup
     self.fecha = Date.civil(Date.today.year, self.mes, self.dia)

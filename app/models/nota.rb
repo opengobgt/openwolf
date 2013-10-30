@@ -16,7 +16,7 @@ class Nota < ActiveRecord::Base
     return ( informacion_publica ? 'Pública' : 'Interno')
   end
 
-  private
+  #private
 
   def notificar_creacion
     Notificaciones.delay.deliver_nueva_nota_seguimiento(self) unless (self.dont_send_email == true)

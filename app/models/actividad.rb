@@ -41,7 +41,7 @@ class Actividad < ActiveRecord::Base
     end
   end
 
-  private
+  #private
 
   def notificar_asignacion
     Notificaciones.delay.deliver_nueva_asignacion(self) unless (self.dont_send_email == true)

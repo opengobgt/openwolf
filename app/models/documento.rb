@@ -98,7 +98,7 @@ class Documento < ActiveRecord::Base
   end
 
   
-  private
+  #private
 
   def completar_informacion
     #asignar categoria

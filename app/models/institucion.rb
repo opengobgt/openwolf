@@ -134,7 +134,7 @@ class Institucion < ActiveRecord::Base
   end
 
   
-  private
+  #private
 
   def cleanup
     

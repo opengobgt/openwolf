@@ -9,7 +9,7 @@ class Seguimiento < ActiveRecord::Base
 
   has_many :documentos, :as => :proceso
     
-  private
+  #private
 
   def completar_informacion
     self.institucion_id = self.usuario.institucion_id
