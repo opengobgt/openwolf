@@ -821,7 +821,7 @@ class Solicitud < ActiveRecord::Base
     return d_fecha_entrega
   end
 
-  private
+#  private
 
   def completar_informacion
     #validamos el origen de la solicitud
