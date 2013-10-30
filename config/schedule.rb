@@ -18,7 +18,7 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 1.day, :at => '12:00pm' do
+every 1.day, :at => '12:00 pm' do
   rake "-s notificaciones:solicitudes_por_vencer"
 end
 

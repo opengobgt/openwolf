@@ -8,7 +8,7 @@ require 'capistrano/ext/multistage'
 #$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano'
 set :rvm_type, :system
-set :rvm_ruby_string, '1.8.7'
+set :rvm_ruby_string, '2.0.0-p247'
 set :rvm_bin_path, "/usr/local/rvm/bin"
 
 set :rails_root, "#{File.dirname(__FILE__)}/.."
@@ -19,15 +19,14 @@ require "whenever/capistrano"
 
 default_run_options[:pty] = true
 
-set :application, "openwolf"
-set :user, "transparencia"
+set :application, "openwolf.transparencia.gob.gt"
+set :user, "openwolf"
+set :password, "openwolf"
 
 set :scm, "git"
-set :repository, "git://gitorious.org/openwolf/openwolf_v3.git"
+set :repository, "https://github.com/opengobgt/openwolf.git"
 set :deploy_via, :remote_cache
 set :use_sudo, false
-
-#set :git_enable_submodules, 1
 
 task :uname do
   run "uname -a"
@@ -41,8 +40,6 @@ namespace :deploy do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 end
-
-after "deploy:symlink", :symlink_gems
 
 before "deploy:update_code", "solr:stop"
 after "deploy:symlink", "solr:symlink"
@@ -62,22 +59,12 @@ after "deploy:start", "solr:start"
 after "deploy:start", "delayed_job:start"
 
 
-desc "Vincular directorio de gems"
-task :symlink_gems, :roles => :app do
-  puts "\n\n=== Vinculando Gems ===\n\n"
-  run <<-CMD
-    cd #{release_path} &&
-    ln -nfs #{shared_path}/bundle #{current_path}/vendor/gems &&
-    bundle install --path vendor/gems
-  CMD
-end
-
 namespace :solr do
   desc "Link in solr directory"
   task :symlink, :roles => :solr do
     run <<-CMD
       cd #{release_path} &&
-      ln -nfs #{shared_path}/solr #{release_path}/solr
+      ln -nfs #{shared_path}/solr #{release_path}/solr; true
     CMD
   end
 
@@ -87,7 +74,7 @@ namespace :solr do
 
     run <<-CMD
       cd #{current_path} &&
-      bundle exec rake sunspot:solr:stop RAILS_ENV=#{rails_env} ; true
+      bundle exec rake sunspot:solr:stop RAILS_ENV=#{rails_env}; true
     CMD
 
 
@@ -97,7 +84,7 @@ namespace :solr do
   task :start, :roles => :solr do
     run <<-CMD
       cd #{current_path} &&
-      nohup bundle exec rake sunspot:solr:start RAILS_ENV=#{rails_env} > #{shared_path}/log/solr.log 2> #{shared_path}/log/solr.err.log
+      nohup bundle exec rake sunspot:solr:start RAILS_ENV=#{rails_env} > #{shared_path}/log/solr.log 2> #{shared_path}/log/solr.err.log ; true
     CMD
   end
 
@@ -105,7 +92,7 @@ namespace :solr do
   task :reindex, :roles => :solr do
     run <<-CMD
       cd #{current_path} &&
-      bundle exec rake sunspot:solr:reindex RAILS_ENV=#{rails_env}
+      bundle exec rake sunspot:solr:reindex RAILS_ENV=#{rails_env}; true
     CMD
   end
 end
