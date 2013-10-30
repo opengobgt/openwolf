@@ -1,6 +1,5 @@
-# encoding: utf-8
-
 # -*- coding: utf-8 -*-
+
 class Notificaciones < ActionMailer::Base
 
   default :from => "notificaciones@openwolf.org"
@@ -21,7 +20,7 @@ class Notificaciones < ActionMailer::Base
     email_ciudadano = solicitud.email
     correo_institucional = solicitud.institucion.email
     correos_interesados = solicitud.correos_interesados(false).join(", ")
-    subject = "openwolf - Confirmaci¨®n nueva solicitud de informaci¨®n - #{solicitud.codigo}."
+    subject = "openwolf - Confirmacion nueva solicitud de informacion - #{solicitud.codigo}."
 
 
     if a_ciudadano == true
@@ -55,7 +54,7 @@ class Notificaciones < ActionMailer::Base
     mail(:to => actividad.usuario.email,
          :bcc => correo_institucional,
          :reply_to => correo_institucional,
-         :subject => "openwolf - Nueva Asignaci¨®n - Solicitud #{actividad.solicitud.codigo}")
+         :subject => "openwolf - Nueva Asignacion - Solicitud #{actividad.solicitud.codigo}")
   end
 
 
