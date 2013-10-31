@@ -1,4 +1,4 @@
-set :stages, %w(production staging)
+set :stages, %w(production staging mineco)
 set :default_stage, "staging"
 
 require 'bundler/capistrano'
@@ -6,10 +6,6 @@ require 'delayed/recipes'
 require 'capistrano/ext/multistage'
 
 #$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-require 'rvm/capistrano'
-set :rvm_type, :system
-set :rvm_ruby_string, '2.0.0-p247'
-set :rvm_bin_path, "/usr/local/rvm/bin"
 
 set :rails_root, "#{File.dirname(__FILE__)}/.."
 require "#{rails_root}/config/capistrano_database_yml.rb"
@@ -19,14 +15,7 @@ require "whenever/capistrano"
 
 default_run_options[:pty] = true
 
-set :application, "openwolf.transparencia.gob.gt"
-set :user, "openwolf"
-set :password, "openwolf"
 
-set :scm, "git"
-set :repository, "https://github.com/opengobgt/openwolf.git"
-set :deploy_via, :remote_cache
-set :use_sudo, false
 
 task :uname do
   run "uname -a"
@@ -125,11 +114,11 @@ namespace :openwolf do
       end
 
       puts "Downloading file..."
-      download(file_path, "/home/javier/Backup/#{filename}")
+      download(file_path, "/tmp/#{filename}")
 
       puts "Extracting file"
-      system("bunzip2 /home/javier/Backup/#{filename}")
-      system("psql -h localhost -p 5432 -U openwolf -W -d openwolf_development < /home/javier/Backup/#{clean_filename}")
+      system("bunzip2 /tmp/#{filename}")
+      system("psql -h localhost -p 5432 -U openwolf -W -d openwolf_development < /tmp/#{clean_filename}")
 
     end
 

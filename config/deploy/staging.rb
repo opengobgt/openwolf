@@ -1,3 +1,12 @@
+set :application, "openwolf.transparencia.gob.gt"
+set :user, "openwolf"
+set :password, "openwolf"
+
+set :scm, "git"
+set :repository, "https://github.com/opengobgt/openwolf.git"
+set :deploy_via, :remote_cache
+set :use_sudo, false
+
 set :applicationdir, "/home/transparencia/public_html/staging/#{application}"
 set :deploy_to, "/home/transparencia/public_html/staging/#{application}"
 

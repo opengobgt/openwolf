@@ -1,3 +1,17 @@
+require 'rvm/capistrano'
+set :rvm_type, :system
+set :rvm_ruby_string, '2.0.0-p247'
+set :rvm_bin_path, "/usr/local/rvm/bin"
+
+set :application, "openwolf.transparencia.gob.gt"
+set :user, "openwolf"
+set :password, "openwolf"
+
+set :scm, "git"
+set :repository, "https://github.com/opengobgt/openwolf.git"
+set :deploy_via, :remote_cache
+set :use_sudo, false
+
 set :applicationdir, "/var/www/#{application}"
 set :deploy_to, "/var/www/#{application}"
 
