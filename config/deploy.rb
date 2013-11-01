@@ -128,7 +128,7 @@ namespace :openwolf do
       timestamp = Time.now.to_f
       filename = "#{application}.dump.#{timestamp}.sql.bz2"
       clean_filename = "#{application}.dump.#{timestamp}.sql"
-      file_path = "#{File.dirname(__FILE__)}/../tmp/" + filename
+      file_path = "/tmp/" + filename
       #      text = capture "cat ../config/database.yml"
       text = File.open("#{File.dirname(__FILE__)}/../config/database.yml",'r')
       yaml = YAML::load(text.read)
@@ -140,20 +140,27 @@ namespace :openwolf do
         puts out
       end
 
-      backup_file = "#{backup_dir}/#{filename}"
+      backup_file = "/tmp/#{filename}"
 
       puts "Uploading file: #{file_path} to #{backup_file}"
-      system("scp -C #{file_path} transparencia@openwolf.transparencia.gob.gt://#{backup_file}")
+      upload(file_path, backup_file, via: :scp)
 
       puts "Extracting file #{backup_file}"
       run "bunzip2 #{backup_file}"
 
       puts "Restoring Backup"
+      host = yaml[rails_env]['host']
       user_name = yaml[rails_env]['username']
       db_name = yaml[rails_env]['database']
       pwd = yaml[rails_env]['password']
 
-      run "psql -h localhost -p 5432 -U #{user_name} -W -d #{db_name} < #{backup_dir}/#{clean_filename}" do |ch, stream, out|
+      cmd = "psql -h #{host} -p 5432 -U #{user_name} -W -d #{db_name} < /tmp/#{clean_filename}"
+      puts ">>>>>>>>>>>>>>>>>>>>>>>>>"
+      puts cmd
+      puts pwd
+      puts "<<<<<<<<<<<<<<<<<<<<<<<<<"
+
+      run cmd do |ch, stream, out|
         ch.send_data "#{pwd}\n" if out =~ /^Password for user #{user_name}:/
         puts out
       end
