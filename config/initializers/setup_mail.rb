@@ -5,13 +5,13 @@ if ["development", "test", "staging"].include?(Rails.env.to_s)
   ActionMailer::Base.raise_delivery_errors = true
 
   ActionMailer::Base.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :domain               => "openwolf.org",
-    :user_name            => "system@openwolf.org",
-    :password             => "Bless777",
+    :address              => "mail.transparencia.gob.gt",
+    :port                 => 25,
+    :domain               => "transparencia.gob.gt",
+    :user_name            => "ow@transparencia.gob.gt",
+    :password             => "0penW0lf2013",
     :authentication       => "plain",
-    :enable_starttls_auto => true
+    #:enable_starttls_auto => true
   }
 
   require "development_mail_interceptor"
