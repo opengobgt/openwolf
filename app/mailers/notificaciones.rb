@@ -2,7 +2,7 @@
 
 class Notificaciones < ActionMailer::Base
 
-  default :from => "notificaciones@openwolf.org"
+  default :from => "ow@transparencia.gob.gt"
 
   if Rails.env.development?
     default_url_options[:host] = "localhost:3000"
