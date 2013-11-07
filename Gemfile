@@ -41,7 +41,7 @@ gem 'admin_data', :git => 'git://github.com/bigbinary/admin_data.git' # modulo p
 gem 'whenever' # manejo de cronjobs
 gem 'activerecord-import', '>= 0.2.0' # herramienta para importacion de data
 gem 'serenity-odt' #generacion de templates ODT
-gem 'fastercsv' #manejo de archivos CSV
+gem 'csv' #manejo de archivos CSV
 gem 'vestal_versions', :git => 'git://github.com/adamcooper/vestal_versions' #manejor de versiones de modelos
 
 gem 'daemons'

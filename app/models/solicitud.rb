@@ -728,7 +728,7 @@ class Solicitud < ActiveRecord::Base
       end
     end
 
-    csv_string = FasterCSV.generate do |csv|
+    csv_string = CSV.generate do |csv|
       csv <<  [Solicitud.human_attribute_name(:rpt_institucion),
                Solicitud.human_attribute_name(:rpt_correlativo),
                Solicitud.human_attribute_name(:rpt_solicitud),
