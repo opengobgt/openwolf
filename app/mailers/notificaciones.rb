@@ -93,7 +93,10 @@ class Notificaciones < ActionMailer::Base
            :subject => subject)
     else
       mail(:to => email_ciudadano,
-           :bcc => correos_interesados + ', ' + correo_institucional,    end
+           :bcc => correos_interesados + ', ' + correo_institucional,
+           :reply_to => correo_institucional,
+           :subject => subject)
+    end
 
   end
 
@@ -123,5 +126,5 @@ class Notificaciones < ActionMailer::Base
          :subject => "[openwolf] Reporte de Solicitudes por vencer - #{nombre_institucion} - #{Time.now}.")
    end
   end
-
-end
+  :reply_to => correo_institucional,
+  :subject => subject)
