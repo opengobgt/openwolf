@@ -8,7 +8,7 @@ if ["development", "test", "staging"].include?(Rails.env.to_s)
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => "gmail.com",
-    :user_name            => "openwolf.copret",
+    :user_name            => "openwolf.copret@gmail.com",
     :password             => "Copret2013",
     :authentication       => "plain",
     :enable_starttls_auto => true
