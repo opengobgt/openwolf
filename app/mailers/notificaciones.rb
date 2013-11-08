@@ -126,3 +126,5 @@ class Notificaciones < ActionMailer::Base
          :subject => "[openwolf] Reporte de Solicitudes por vencer - #{nombre_institucion} - #{Time.now}.")
    end
   end
+
+end
