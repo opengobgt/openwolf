@@ -27,8 +27,8 @@ class Notificaciones < ActionMailer::Base
       @nombre_destinatario = solicitud.solicitante_nombre
 
       mail(:to => email_ciudadano,
-           #:bcc => correo_institucional,
-           :bcc => 'openwolf.copret@gmail.com',
+           :bcc => correo_institucional,
+           #:bcc => 'openwolf.copret@gmail.com',
            :reply_to => correo_institucional,
            :subject => subject)
 
