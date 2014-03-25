@@ -217,8 +217,9 @@ div#search {
 
 .center_box { 
     display: block;  
-    background: url(../images/solicitudes.jpg) top center no-repeat;
+    background: url(../images/solOW.jpg) top center no-repeat;
     background-size: cover;
+    min-height: 310px;
 }
 
 #logo { text-align: center;
