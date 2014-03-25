@@ -215,7 +215,11 @@ div#search {
 
 /* Pagina de Inicio */
 
-.center_box { display: block;  }
+.center_box { 
+    display: block;  
+    background: url(../images/solicitudes.jpg) top center no-repeat;
+    background-size: cover;
+}
 
 #logo { text-align: center;
         padding: 28px 0 3px;}
