@@ -219,12 +219,11 @@ div#search {
     display: block;  
     background: url(../images/solOW.jpg) top center no-repeat;
     background-size: cover;
-    min-height: 310px;
+    min-height: 350px;
 }
 
 #logo { text-align: center;
-        padding: 28px 0 3px;
-        height: 350px;
+        padding: 28px 0 3px;       
       }
 #logo h2 { font-family: 'Josefin Sans', arial, serif; }
 
@@ -233,7 +232,7 @@ div#search {
 
 #main-search { width: 960px;
                text-align: center;
-               margin: auto;
+               margin: 200px auto 0;
                }
 
 #main-search table { width: 960px;  }
