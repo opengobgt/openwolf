@@ -223,7 +223,9 @@ div#search {
 }
 
 #logo { text-align: center;
-        padding: 28px 0 3px;}
+        padding: 28px 0 3px;
+        height: 300px;
+      }
 #logo h2 { font-family: 'Josefin Sans', arial, serif; }
 
 #main-search { margin-bottom: 20px;
