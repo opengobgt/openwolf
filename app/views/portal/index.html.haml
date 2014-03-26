@@ -15,10 +15,9 @@
                 = text_field_tag 'search','', :title=>'Buscar Documentos, Solicitudes de Información, etc.', :size => 40, :style=>"background:#fff;border:1px solid #ccc;border-bottom-color:#999;border-right-color:#999;color:#000;font:18px arial,sans-serif bold;height:25px;margin:0;padding:5px 8px 0 6px;vertical-align:top"
               %br{:style => "line-height:0"}/
               = link_to 'Opciones de Búsqueda', '#', :class => "filtro", :title => "Opciones avanzadas de búsqueda."
-              %br/
-              %div{:style => "text-align: center;"}
+              %br/              
                 = submit_tag "Buscar en OpenWolf"
-                            
+
   / end - main_search
 / end - center_box
 #filtro.popup{:style => "display: none; height: 500px; width: 650px;"}
