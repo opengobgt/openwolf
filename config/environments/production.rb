@@ -51,7 +51,7 @@ OpenwolfV3::Application.configure do
   #configuracion de dominio predeterminado para DEVISE
   config.action_mailer.default_url_options = { :host => 'openwolf.transparencia.gob.gt' }
 
-  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.raise_delivery_errors = true
 
