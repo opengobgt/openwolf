@@ -7,9 +7,9 @@ if ["development", "test", "staging"].include?(Rails.env.to_s)
   ActionMailer::Base.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :domain               => "openwolf.org",
-    :user_name            => "system@openwolf.org",
-    :password             => "Bless777",
+    :domain               => "gmail.com",
+    :user_name            => "openwolf.copret@gmail.com",
+    :password             => "Copret2013",
     :authentication       => "plain",
     :enable_starttls_auto => true
   }
