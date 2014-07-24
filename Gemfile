@@ -111,6 +111,4 @@ group  :test do
   gem "spork", "0.9.0.rc9"
 
   gem 'email_spec'
-
-  gem "hirb"
 end

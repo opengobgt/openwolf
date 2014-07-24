@@ -1,7 +1,7 @@
 # config/initializers/setup_mail.rb
 
 
-if ["development", "test", "staging"].include?(Rails.env.to_s)
+if ["development", "test", "staging", "production"].include?(Rails.env.to_s)
   ActionMailer::Base.raise_delivery_errors = true
 
   ActionMailer::Base.smtp_settings = {
