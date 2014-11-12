@@ -51,6 +51,9 @@ gem 'delayed_job' # envia procesos a background - en uso para enviar correos
 gem 'dalli' # interfaz con servicio de almacenamiento de cache de objetos Memcached - memcached.org
 gem 'backup' #libreria para generar backups de aplicacion
 
+# ENVIO DE CORREOS
+gem 'mandrill-api'
+
 # MONITOREO
 gem 'newrelic_rpm' # monitoreo de performance http://newrelic.com
 gem 'airbrake' #notificacion de errores via http://hoptoadapp.com/

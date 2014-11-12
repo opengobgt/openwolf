@@ -73,7 +73,7 @@ class Solicitud < ActiveRecord::Base
   before_validation(:on => :create) do
     completar_informacion
   end
-  #after_create :notificar_creacion
+  after_create :notificar_creacion
 
   #################
   # Relaciones

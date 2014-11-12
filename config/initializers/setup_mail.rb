@@ -5,12 +5,12 @@ if ["development", "test", "staging", "production"].include?(Rails.env.to_s)
   ActionMailer::Base.raise_delivery_errors = true
 
   ActionMailer::Base.smtp_settings = {
-    :address              => "smtp.gmail.com",
+    :address              => "smtp.mandrillapp.com",
     :port                 => 587,
-    :domain               => "gmail.com",
-    :user_name            => "openwolf.copret@gmail.com",
-    :password             => "Copret2013",
-    :authentication       => "plain",
+    :domain               => "transparencia.gob.gt",
+    :user_name            => "egob@transparencia.gob.gt",
+    :password             => "leMxsgwpBEE7B1sgxmJcsQ",
+    :authentication       => "login",
     :enable_starttls_auto => true
   }
 
