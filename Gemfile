@@ -52,7 +52,7 @@ gem 'dalli' # interfaz con servicio de almacenamiento de cache de objetos Memcac
 gem 'backup' #libreria para generar backups de aplicacion
 
 # ENVIO DE CORREOS
-gem 'mandrill-api'
+gem 'mandrill-api' 
 
 # MONITOREO
 gem 'newrelic_rpm' # monitoreo de performance http://newrelic.com
