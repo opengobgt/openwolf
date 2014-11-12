@@ -122,7 +122,7 @@ class Notificaciones < ActionMailer::Base
 
     mail(:to => destinatarios,
          :cc => correo_institucional,
-         :bcc => 'marvin.mlima@gmail.com',
+         #:bcc => 'marvin.mlima@gmail.com',
          :reply_to => correo_institucional,
          :subject => "[openwolf] Reporte de Solicitudes por vencer - #{nombre_institucion} - #{Time.now}.")
    end
