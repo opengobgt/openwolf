@@ -761,10 +761,10 @@ class Solicitud < ActiveRecord::Base
 
   def notificar_creacion
     unless (self.email.nil? or self.email.blank?)
-      Notificaciones.nueva_solicitud(self, Time.now, true).deliver_now unless (self.dont_send_email == true)
+      Notificaciones.nueva_solicitud(self, Time.now, true).deliver unless (self.dont_send_email == true)
     end
 
-    Notificaciones.nueva_solicitud(self, Time.now, false).deliver_now unless (self.dont_send_email == true)
+    Notificaciones.nueva_solicitud(self, Time.now, false).deliver unless (self.dont_send_email == true)
   end
 
   def calcular_fecha_entrega
