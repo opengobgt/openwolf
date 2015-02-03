@@ -23,8 +23,7 @@
           %li= link_to "Portal Estatal", ( usuario_actual.nil? ? login_url : main_index_url), :title => "Portal Administrativo"
           %li= link_to "Busqueda", portal_index_url, :title => "Buscar Solicitudes de Información Pública o Documentos"
           %li= link_to "Crear Solicitud de Información Pública", new_solicitud_informacion_url, :title => "Generar una nueva solicitud de información pública."
-          %li= link_to "Estadisticas", portal_estadisticas_path(1), :title => "Estadísticas por Institución"
-         //%li= link_to "Ayuda", "http://docs.openwolf.org", :title => "Documentación OpenWolf"
+          %li= link_to "Estadisticas", portal_estadisticas_path(1), :title => "Estadísticas por Institución"         
       #account-menu.hlist
         %ul
           - unless usuario_actual.nil?
@@ -39,19 +38,7 @@
     = yield
     #footer
        Plataforma virtual para la transparencia
-      %br/
-      //%br/
-      //= link_to "Blog", "http://openwolf.org/blog"      
-      //|
-      //= link_to "Acerca del Proyecto", "http://openwolf.org/sobre-openwolf-libre-acceso-informacion-guatemala/"
-     // |
-     // = link_to "Preguntas Frecuentes", "#"
-     // |
-     // = link_to "Licenciamiento", "http://openwolf.org/gplv3/"
-     // |
-     // = link_to "Portal Estatal", main_index_url
-    //#poweredby{:style => "text-align: center; margin-top: 20px; width: 100%; float: left;"}
-     // = link_to image_tag('logopenwolf.png',:alt => 'Powered by OpenWolf v0.1a',:width=>'100px'), 'http://openwolf.org', :title => "Powered by OpenWolf"
+      %br/      
     = csrf_meta_tag
     = javascript_include_tag :defaults, 'jquery-ui.min.js', 'jquery.ui.datepicker-es.js', 'combobox.js'
     :javascript
