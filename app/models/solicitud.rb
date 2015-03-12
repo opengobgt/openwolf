@@ -28,8 +28,6 @@ class Solicitud < ActiveRecord::Base
   attr_accessor :dont_send_email
   attr_accessor :dont_set_estado
 
-  attr_accessible :attachment
-
   #####################
   # Modulos y Plugins
   #####################
