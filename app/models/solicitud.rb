@@ -31,6 +31,8 @@ class Solicitud < ActiveRecord::Base
   attr_accessor :attachment_file_size
   attr_accessor :attachment_updated_at
 
+  attr_accessible :attachment
+
   #####################
   # Modulos y Plugins
   #####################
