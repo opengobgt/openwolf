@@ -37,7 +37,7 @@
               %td= @solicitud.forma_entrega
             %tr
             %th= label :attachment, Solicitud.human_attribute_name(:attachment)
-            %td= <a href="/system/assets/attachments/#{@solicitud.id}/original/#{@solicitud.attachment_file_name}">@solicitud.attachment_file_name</a>
+            %td= link_to @solicitud.attachment_file_name, @solicitud.attachment.url
           %hr/
           %h4 Asignado a
           #solicitud_no_asignada.error{ @actividades.size > 0 ? {:style => "display:none"} : {} }
