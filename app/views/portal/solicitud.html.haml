@@ -31,8 +31,7 @@
               %td= @solicitud.usuario.nombre_institucion
             %tr
               %th= label :via_id, Solicitud.human_attribute_name(:via_id)
-              %td= @solicitud.via.nombre
-           
+              %td= @solicitud.via.nombre           
         - unless @attachment_file_name
             %tr
               %th= label :attachment, Solicitud.human_attribute_name(:attachment)
