@@ -35,7 +35,11 @@
             %tr
               %th= label :forma_entrega, Solicitud.human_attribute_name(:forma_entrega)
               %td= @solicitud.forma_entrega
-          %hr/
+        - unless @attachment_file_name
+            %tr
+              %th= label :attachment, Solicitud.human_attribute_name(:attachment)
+              %td= @solicitud.attachment_file_name
+	  %hr/
           %h4 Asignado a
           #solicitud_no_asignada.error{ @actividades.size > 0 ? {:style => "display:none"} : {} }
             La solicitud no ha sido asignada.
