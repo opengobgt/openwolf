@@ -35,7 +35,6 @@
             %tr
               %th= label :forma_entrega, Solicitud.human_attribute_name(:forma_entrega)
               %td= @solicitud.forma_entrega
-          - unless @solicitud.attachment_file_name
             %tr
             %th= label :attachment, Solicitud.human_attribute_name(:attachment)
             %td= @solicitud.attachment_file_name
