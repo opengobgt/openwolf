@@ -23,21 +23,18 @@ class Solicitud < ActiveRecord::Base
 
   IDIOMA_DEFAULT = 12 #ladino
 
+  has_attached_file :attachment
+
   attr_accessor :dont_send_email
   attr_accessor :dont_set_estado
 
-  attr_accessor :attachment_file_name
-  attr_accessor :attachment_content_type
-  attr_accessor :attachment_file_size
-  attr_accessor :attachment_updated_at
+  attr_accessible :attachment
 
   #####################
   # Modulos y Plugins
   #####################
 
-  versioned :if => :guardar_version?
-
-  has_attached_file :attachment
+  versioned :if => :guardar_version?  
   
   apply_simple_captcha
 
