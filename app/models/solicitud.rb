@@ -26,6 +26,11 @@ class Solicitud < ActiveRecord::Base
   attr_accessor :dont_send_email
   attr_accessor :dont_set_estado
 
+  attr_accessor :attachment_file_name
+  attr_accessor :attachment_content_type
+  attr_accessor :attachment_file_size
+  attr_accessor :attachment_updated_at
+
   #####################
   # Modulos y Plugins
   #####################
