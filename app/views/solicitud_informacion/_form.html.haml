@@ -5,8 +5,9 @@
   = form.input :email, :input_html => {:size => 60, :maxsize => 254}, :hint => "Correo electrónico del solicitante. Para seguimiento y notificaciones.", :required => true 
   = form.input :solicitante_telefonos, :input_html => {:size => 60, :maxsize => 254}, :hint => "Teléfonos para contactar a solicitante en caso de aclaración o seguimiento.", :required => true
   = form.input :textosolicitud, :input_html => {:rows => 5}, :hint => "Descripción de información solicitada"
+  = form.input :file, :label => "Agregue un documento como soporte a la solicitud"
   = form.input :reserva_temporal, :label => "Requiero que esta solicitud se mantenga bajo reserva hasta el momento de haber sido completada."
-  = form.input :adjunto, :as => :file, :label => "Adjunte archivo"
+  
   %h2 Información Opcional
   = form.input :genero, :include_blank => true, :hint => "Opcional: Género del solicitante"
   =# form.input :forma_entrega, :hint => "Forma o medio como el solicitante requiere la solicitud.", :input_html => {:size => 60}

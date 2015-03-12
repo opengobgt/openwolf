@@ -31,6 +31,8 @@ class Solicitud < ActiveRecord::Base
   #####################
 
   versioned :if => :guardar_version?
+
+  has_attached_file :attachment
   
   apply_simple_captcha
 
